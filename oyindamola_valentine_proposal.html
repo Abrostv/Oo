@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oyindamola ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+height:100vh;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#ff4d6d,#ff758f,#ffc0cb);
+}
+
+.rose{
+position:absolute;
+font-size:22px;
+animation:float 10s linear infinite;
+opacity:.6;
+}
+
+@keyframes float{
+from{transform:translateY(100vh);}
+to{transform:translateY(-10vh);}
+}
+
+.card{
+background:white;
+max-width:420px;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+position:relative;
+z-index:2;
+}
+
+button{
+border:none;
+padding:12px 22px;
+border-radius:40px;
+cursor:pointer;
+transition:.25s;
+}
+
+.yes{background:#ff4d6d;color:white;}
+.no{background:#ffd6e0;}
+
+video{width:100%;border-radius:12px;margin:15px 0;}
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<25;i++){
+let r=document.createElement("div");
+r.className="rose";
+r.innerHTML="🌹";
+r.style.left=Math.random()*100+"vw";
+r.style.animationDuration=(6+Math.random()*8)+"s";
+document.body.appendChild(r);
+}
+</script>
+
+<div class="card">
+
+<h2>Oyindamola ❤️</h2>
+
+<p>
+I was going to keep this low-key… but you deserve something intentional.<br>
+So here it is, straight from my heart:
+</p>
+
+<h3>Will you be my Valentine? 🌹</h3>
+
+<video controls>
+<source src="VID-20260206-WA0005.mp4" type="video/mp4">
+</video>
+
+<div>
+<button class="yes" id="yesBtn">Yes 💖</button>
+<button class="no" id="noBtn">No</button>
+</div>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+const yes=document.getElementById("yesBtn");
+const no=document.getElementById("noBtn");
+const msg=document.getElementById("msg");
+
+let clicks=0;
+
+yes.onclick=()=>{
+msg.innerText="Now you made me smile 💖🌹";
+setTimeout(()=>{
+window.location.href="https://wa.me/message/UKTGQ4FGWAYFI1";
+},2000);
+};
+
+no.onclick=()=>{
+clicks++;
+if(clicks===1) no.innerText="Are you sure?";
+
+yes.style.transform=`scale(${1+clicks*0.25})`;
+
+let x=Math.random()*250-125;
+let y=Math.random()*150-75;
+no.style.transform=`translate(${x}px,${y}px)`;
+};
+</script>
+
+</body>
+</html>
